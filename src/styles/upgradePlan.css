@@ -1,4 +1,88 @@
-.upgrade-plan{
-  border: 3px solid green;
+.upgrade-plan-cont{
   border-radius: 10px;
+  background-color: #fff;
+  width: 55%;
+  padding-top: 10px;
+}
+
+.upgrade-plan{
+  width: 85%;
+  margin-left: 7%;
+}
+
+.upgrade-plan h1{
+  font-size: 1.5rem;
+}
+
+.upgrade-plan p{
+  color: #979EA7;
+}
+.plan-type{
+  border: 2px solid #3c68ff;
+  border-radius: 5px;
+  background-color: #f2f5ff;
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.plan-type-text{
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.plan-type-rate{
+  width: 30%;
+}
+
+.plan-img{
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  border: 1px solid #7594FF;
+  border-radius: 3px;
+}
+
+.payment-details-form{
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.card-info{
+  width: 100%;
+}
+
+.card-logo{
+  width: 70px;
+  object-fit: fill;
+  background-color: gray;
+}
+
+.add-payment{
+  background-color: #fff;
+  color: #3c68ff;
+  border: none;
+  font-size: 1rem;
+}
+
+.payment-details-form input[type=email]{
+  border: 1px solid #E4E8ED;
+  border-radius: 3px;
+  /* width: 97.5%; */
+  height: 50px;
+  font-size: 1.3rem;
+  padding: 8px;
+  margin: 15px 0 15px 0;
+}
+
+.payment-details-form button[type=submit]{
+  border: none;
+  border-radius: 5px;
+  background-color: #3c68ff;
+  height: 80px;
+  margin-top: 15px;
+  color: #fff;
+  font-size: 1.3rem;
 }

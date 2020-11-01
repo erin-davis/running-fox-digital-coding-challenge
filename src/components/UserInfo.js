@@ -24,13 +24,24 @@ function UserInfo() {
       >
       <img src={`${user.profile_image_url}`} alt={`${user.name} Profile Picture`} className="profile-pic"/>
       </header>
-      <h1>{user.name}</h1>
-      <p>{user.location}</p>
+      <div className="user-info">
+        <h1>{user.name}</h1>
+        <p>{user.location}</p>
+        <button className="user-level">{user.level}</button>
+      </div>
     <span className="user-stats">
-      <article className="user-level">{user.level}</article>
-      <article className="user-num">Followers {user.follower_count}</article>
-      <article className="user-num">Projects {user.project_count}</article>
-      <article className="user-num">Rank {user.rank}</article>
+      <article>
+        <p>Followers</p>
+        <h3>{user.follower_count}</h3>
+        </article>
+      <article>
+        <p>Projects</p>
+        <h3>{user.project_count}</h3>
+        </article>
+      <article>
+        <p>Rank</p> 
+        <h3>{user.rank}</h3>
+        </article>
     </span>
     </div>
   )

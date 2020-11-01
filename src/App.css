@@ -1,8 +1,11 @@
-*{
-  background-color: #e4e9f3;
+.App{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  background-color: #E5EAF3;
+  height: 
 }
 .user{
-  width: 30%;
-  border: 1px solid orange;
-  padding: 10px;
+  width: 35%;
+  padding: 0;
 }
