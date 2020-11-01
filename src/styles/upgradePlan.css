@@ -2,7 +2,8 @@
   border-radius: 10px;
   background-color: #fff;
   width: 55%;
-  padding-top: 10px;
+  padding: 10px 0 0 0;
+  margin: 0;
 }
 
 .upgrade-plan{
@@ -16,6 +17,7 @@
 
 .upgrade-plan p{
   color: #979EA7;
+  margin-bottom: 0;
 }
 .plan-type{
   border: 2px solid #3c68ff;
@@ -24,6 +26,7 @@
   display: flex;
   padding: 10px;
   justify-content: space-between;
+  margin: 25px 0 40px 0;
 }
 
 .plan-type-text{
@@ -37,27 +40,113 @@
 }
 
 .plan-img{
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
+  width: 14%;
+  height: 100%;
+  object-fit: cover;
   border: 1px solid #7594FF;
-  border-radius: 3px;
+  border-radius: 5px;
+  margin: auto 0;
+}
+
+.plan-type-text article{
+  width: 40%;
+  margin: auto 0;
+}
+.plan-type-text article h1{
+  margin: 5px 0;
+}
+
+.plan-type-text article p{
+  margin: 0;
+  color: #2759FF;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.plan-type-rate{
+  display: flex;
+  flex-direction: row;
+  width: 40%;
+  margin: auto 0 auto auto;
+  padding: 5px;
+}
+.plan-type-rate h2{
+  font-size: 2.5rem;
+  margin: auto 0;
+  font-weight: 500;
+}
+.plan-type-rate p{
+  color: #979EA7;
+  font-size: 1.5rem;
+  margin: auto 0;
+  padding: 0 5px;
 }
 
 .payment-details-form{
   /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
+  margin-top: 0px;
+}
+
+.payment h2{
+  margin-top: 0;
 }
 
 .card-info{
   width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: 15px 0;
 }
 
 .card-logo{
   width: 70px;
   object-fit: fill;
-  background-color: gray;
+  background-color: #F2F5FF;
+  margin-right: 15px;
+}
+
+.visa{
+  width: 70px;
+  height: 100%;
+  object-fit: contain;
+}
+
+.card-num{
+  width: 70%;
+  padding: 5px 0 5px 10px;
+}
+
+.card-num label{
+  font-size: 1rem;
+  font-weight: 600;
+  /* padding: 5px 0 0 5px; */
+}
+
+.card-num p{
+  margin: 5px 0 0 0;
+  font-size: 1.1rem;
+}
+
+
+.card-info input[type=number]::-webkit-outer-spin-button, .card-info input[type=number]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.card-info input[type=number]{
+  border: 1px solid #979EA7;
+  border-radius: 6px;
+  width: 10%;
+  height: 40px;
+  margin: auto 0 auto auto;
+}
+
+.card-info input[type=number]:focus{
+  outline: none;
+  border: 2px solid#2759FF;
+  border-radius: 6px;
 }
 
 .add-payment{
@@ -65,6 +154,7 @@
   color: #3c68ff;
   border: none;
   font-size: 1rem;
+  font-weight: 600;
 }
 
 .payment-details-form input[type=email]{
@@ -74,9 +164,12 @@
   height: 50px;
   font-size: 1.3rem;
   padding: 8px;
-  margin: 15px 0 15px 0;
+  margin: 30px 0 15px 0;
 }
 
+.payment-details-form input[type=email]::placeholder{
+  color: #979EA7;
+}
 .payment-details-form button[type=submit]{
   border: none;
   border-radius: 5px;

@@ -3,9 +3,23 @@
   justify-content: space-around;
   padding-top: 20px;
   background-color: #E5EAF3;
-  height: 
+  overflow: hidden;
+ padding-bottom: 30px;
 }
 .user{
   width: 35%;
   padding: 0;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+}
+
+.upgrade-plan-cont, .pricing, .user-profile{
+  box-shadow:
+  0 4.2px 16.4px rgba(0, 0, 0, 0.059),
+  0 12.4px 30px rgba(0, 0, 0, 0.069),
+  0 31px 51.9px rgba(0, 0, 0, 0.066),
+  0 100px 141px rgba(0, 0, 0, 0.07)
+;
 }

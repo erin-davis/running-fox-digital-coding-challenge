@@ -1,18 +1,32 @@
 import React, {useState} from 'react'
 import "../styles/pricing.css"; 
 import {hourlyIcon, fixedRateIcon} from "../icons/tabler-icons.js";
-import RangeSlider from "react-bootstrap-range-slider";
+import {Slider} from "@material-ui/core";
 
 
 
 function Pricing() {
   const [sliderVal, setSliderVal] = useState(40);
+  
+  const [rates, setRates] = useState({
+    fixedRate: ""
+  });
+  const [activeTab1, setActiveTab1] = useState(true);
+  const [activeTab2, setActiveTab2] = useState(!activeTab1);
 
-  const activeCharge = e =>{
-    e.preventDefault();
+  const changeActive = (e) => {
+    // e.stopPropagation();
+    setActiveTab1(!activeTab1);
+    setActiveTab2(!activeTab2);
+  };
+
+  const handleRates = (e) => {
+    setRates({ ...rates, [e.target.name]: [e.target.value] });
+  };
+
+  const handleSlider = (e, newSliderVal) =>{
+    setSliderVal(newSliderVal);
   }
-
-  //with the articles for the pricing, i'll have to make them divs that show two different things. when fixed is shown, it will remove the range and allow for a $ [fixed rate] total something like that!!
 
   return (
     <div className="pricing">
@@ -21,29 +35,46 @@ function Pricing() {
       <p>Please set up your hourly or fixed rate so that the client is aware of your pricing.</p>
       </div>
       <div className="charge">
-        <article className="price-type">
-          {hourlyIcon}
+        <article className={`hourly ${activeTab1 ? "active" : ""}`} onClick={changeActive}>
+          <span>{hourlyIcon}</span>
           <p>Hourly</p>
         </article>
-        <article className="price-type">
-          {fixedRateIcon}
+        <article className={`fixed ${activeTab2 ? "active" : ""}`} onClick={changeActive}>
+          <span>{fixedRateIcon}</span>
           <p>Fixed</p>
         </article>
       </div>
-      <div className="rate-slider-cont">
-      <h1>${sliderVal} /hour</h1>
-      <RangeSlider
-          value={sliderVal}
-          onChange={(e) => setSliderVal(e.target.value)}
+      <div className="rates-slider-input">
+      <div className={`hourly-rate ${activeTab1 ? "active-rate" : "inactive"}`}>
+      <div className="rate-text">
+        <h2 id="dollar">$</h2>
+        <h1>{sliderVal}</h1>
+        <h2>/hour</h2>
+      </div>
+      <Slider
+          defaultValue={sliderVal}
+          onChange={handleSlider}
           className="rate-slider"
           min={20}
           max={300}
-          tooltip="off"
+          valueLabelDisplay="off"
         />
-        <div className="slider">
+        <div className="slider-values">
         <p>$20</p>
         <p>$300</p>
         </div>
+      </div>
+        <div className={`fixed-rate ${activeTab2 ? "active-rate" : "inactive"}`}>
+        <input
+          type="number"
+          placeholder="Total Rate"
+          id="fixed-rate-input"
+          value={rates.totalPay}
+          name="fixed_rate"
+          onChange={handleRates}
+        />
+        <h1>/ Flat Rate</h1>
+      </div>
       </div>
     </div>
   )

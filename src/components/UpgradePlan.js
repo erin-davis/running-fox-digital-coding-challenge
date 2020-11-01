@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import "../styles/upgradePlan.css";
-import {masterCardLogo, visaLogo, forwardArrow, blueShip} from "../icons/tabler-icons.js"; 
+import {masterCardLogo, visaLogo, blueShip} from "../icons/tabler-icons.js"; 
 
 
 function UpgradePlan() {
@@ -10,22 +10,20 @@ function UpgradePlan() {
     card: [
       {
         company: "Master Card",
-        number: "2344 **** **** 8880",
+        number: "2344 xxxx xxxx 8880",
         cvc: "",
         id: 1
       },
       {
         company: "Visa",
-        number: "8890 **** **** 1234",
+        number: "8890 xxxx xxxx 1234",
         cvc: "",
         id: 2
       }
     ]
   });
 
-  //handler to add card
 
-  //handler for the cvc
   const submitForm = (e) => {
     e.preventDefault();
 
@@ -33,7 +31,6 @@ function UpgradePlan() {
   //payment button will have to be styled
   const addPayment = (e) => {
     e.preventDefault();
-    window.alert("You've added a new payment method");
   };
 
   return (
@@ -49,7 +46,9 @@ function UpgradePlan() {
             <p>CHANGE PLAN</p>
           </article>
           <div className="plan-type-rate">
-            <h2>{plan.rate} / year</h2>
+            <p>$</p>
+            <h2>{plan.rate}</h2>
+            <p> / year</p>
           </div>
         </div>
       </div>
@@ -59,6 +58,7 @@ function UpgradePlan() {
           {plan.card.map((card, index) => {
             return (
               <div className="card-info" key={card.id}>
+                <span>
                 {card.company == "Master Card" ? (
                   <img
                     src={masterCardLogo}
@@ -69,11 +69,14 @@ function UpgradePlan() {
                   <img
                     src={visaLogo}
                     alt={`${card.company}`}
-                    className="card-logo"
+                    className="card-logo visa"
                   />
                 )}
+                </span>
+                <span className="card-num">
                 <label htmlFor={`card-${card.id}`}>Credit Card</label>
                 <p>{card.number}</p>
+                </span>
                 <input
                   id={`card-${card.id}`}
                   type="number"
@@ -81,13 +84,14 @@ function UpgradePlan() {
                   max="999"
                   placeholder="CVC"
                 />
+                
               </div>
             );
           })}
           <button onClick={addPayment} className="add-payment">ADD PAYMENT METHOD</button>
         </div>
         <input type="email" placeholder="Email address" />
-        <button type="submit">Proceed to payment {forwardArrow}</button>
+        <button type="submit">Proceed to payment &#x27F6;</button>
       </form>
       </div>
     </div>
